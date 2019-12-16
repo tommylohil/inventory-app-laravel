@@ -11,4 +11,8 @@ class Stock extends Model
         'ukuran',
         'jumlah',
     ];
+
+    public function item() {
+        return $this->belongsTo('App\Models\Item', 'item_id', 'id');
+    }
 }

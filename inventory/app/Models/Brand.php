@@ -10,4 +10,8 @@ class Brand extends Model
         'nama',
         'asal_negara',
     ];
+
+    public function items() {
+        return $this->hasMany('App\Models\items','item_id','id');
+    }
 }

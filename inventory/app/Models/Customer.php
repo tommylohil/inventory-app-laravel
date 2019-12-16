@@ -12,4 +12,8 @@ class Customer extends Model
         'alamat',
         'total_kunjungan',
     ];
+
+    public function sales() {
+        return $this->hasMany('App\Models\Sale','sale_id','id');
+    }
 }

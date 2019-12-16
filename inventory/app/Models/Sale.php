@@ -14,4 +14,12 @@ class Sale extends Model
         'jumlah_barang',
         'total_harga',
     ];
+
+    public function customer() {
+        return $this->belongsTo('App\Models\Customer', 'customer_id', 'id');
+    }
+
+    public function item() {
+        return $this->belongsTo('App\Models\Item', 'item_id', 'id');
+    }
 }

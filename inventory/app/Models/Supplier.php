@@ -11,4 +11,8 @@ class Supplier extends Model
         'nomor_telepon',
         'alamat',
     ];
+
+    public function items() {
+        return $this->hasMany('App\Models\items','item_id','id');
+    }
 }
