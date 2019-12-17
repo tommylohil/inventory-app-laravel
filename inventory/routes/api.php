@@ -19,6 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Route::middleware('auth:api')->group(function () {
     Route::apiResource('/supplier', 'Api\SupplierController');
+    Route::apiResource('/brand', 'Api\BrandController');
+    Route::apiResource('/customer', 'Api\CustomerController');
+    Route::apiResource('/item', 'Api\ItemController');
+    Route::apiResource('/stock', 'Api\StockController');
+    Route::apiResource('/sale', 'Api\SaleController');
 // });
 
 // Route::post('/login', 'Api\AuthController@login')->name('login.api');
