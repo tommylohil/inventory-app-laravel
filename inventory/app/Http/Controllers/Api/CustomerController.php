@@ -38,7 +38,14 @@ class CustomerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $customer = Customer::create([
+            'nama' => $request->input('nama'),
+            'nomor_telepon' => $request->input('nomor_telepon'),
+            'alamat' => $request->input('alamat'),
+            'total_kunjungan' => $request->input('total_kunjungan'),
+        ]);
+
+        return new CustomerResource($customer);
     }
 
     /**

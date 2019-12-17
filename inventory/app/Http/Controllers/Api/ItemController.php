@@ -38,7 +38,14 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = Item::create([
+            'kode_barang' => $request->input('kode_barang'),
+            'brand_id' => $request->input('brand_id'),
+            'supplier_id' => $request->input('brand_id'),
+            'harga' => $request->input('harga'),
+        ]);
+
+        return new ItemResource ($item);
     }
 
     /**

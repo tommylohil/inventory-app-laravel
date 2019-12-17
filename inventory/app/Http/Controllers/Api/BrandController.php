@@ -38,7 +38,13 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $brand = Brand::create([
+            'nama' => $request->input('nama'),
+            'asal_negara' => $request->input('asal_negara'),
+        ]);
+
+        return new BrandResource($brand);
+
     }
 
     /**

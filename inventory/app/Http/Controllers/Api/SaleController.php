@@ -38,7 +38,16 @@ class SaleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sale = Sale::create([
+            'nomor_nota' => $request->input('nomor_nota'),
+            'customer_id' => $request->input('customer_id'),
+            'item_id' => $request->input('item_id'),
+            'ukuran' => $request->input('ukuran'),
+            'jumlah_barang' => $request->input('jumlah_barang'),
+            'total_harga' => $request->input('total_harga'),
+        ]);
+
+        return new SaleResource ($sale);
     }
 
     /**

@@ -38,7 +38,13 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $stock = Stock::create([
+            'item_id' => $request->input('item_id'),
+            'ukuran' => $request->input('ukuran'),
+            'jumlah' => $request->input('jumlah'),
+        ]);
+
+        return new StockResource ($stock);
     }
 
     /**
