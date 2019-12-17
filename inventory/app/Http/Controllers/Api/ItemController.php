@@ -16,7 +16,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $brand = item::get();
+        $brand = Item::get();
         return new ItemResource($brand);
     }
 
